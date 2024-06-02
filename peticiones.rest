@@ -1,0 +1,61 @@
+@PORT = 3000
+
+@HOST = http://localhost:{{PORT}}
+
+
+GET {{HOST}}/api/posts
+###
+GET {{HOST}}/api/posts/author/11
+###
+GET {{HOST}}/api/posts/7
+###
+POST {{HOST}}/api/posts
+Content-Type: application/json
+
+{
+    "title": "Canto general",
+    "description": "Una obra épica que abarca la historia de América Latina y celebra su identidad y resistencia",
+    "creation_date": "2024-05-26",
+    "category": "2",
+    "authors_id": 11
+}
+
+###
+PUT  {{HOST}}/api/posts/28
+Content-Type: application/json
+
+{
+    "title": "La muerte de Artemio Cruz",
+    "description": "Una novela que refleja la historia reciente de México a través de la vida de un hombre moribundo",
+    "creation_date":"2023-07-12 13:40:00" ,
+    "category": "1",
+    "authors_id":"11" 
+}
+
+###
+DELETE {{HOST}}/api/posts/28
+
+###
+GET {{HOST}}/api/authors
+###
+POST {{HOST}}/api/authors
+Content-Type: application/json
+
+{
+    "name": "Charles Dickens",
+    "email": "charles@example.com",
+    "image": "charles.jpg"
+}
+
+###
+PUT {{HOST}}/api/authors/14
+Content-Type: application/json
+
+{
+    "name": "JKUKU Dickenss",
+    "email": "charles@example.com",
+    "image": "charles.jpg"
+}
+
+###
+DELETE {{HOST}}/api/authors/14
